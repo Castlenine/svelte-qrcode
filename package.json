@@ -1,0 +1,96 @@
+{
+	"name": "@castlenine/svelte-qrcode",
+	"description": "QR Code generator component for Svelte & SvelteKit",
+	"version": "0.0.1",
+	"author": "castlenine",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/castlenine/svelte-qrcode.git"
+	},
+	"bugs": {
+		"url": "https://github.com/castlenine/svelte-qrcode/issues"
+	},
+	"keywords": [
+		"2fa",
+		"authentication",
+		"multifactor",
+		"qr",
+		"qrcode",
+		"qrimage",
+		"qrsvg",
+		"svelte",
+		"sveltekit",
+		"svg",
+		"totp"
+	],
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run package",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run package",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"eslint": "eslint --ignore-path ./.eslintignore .",
+		"eslint:fix": "eslint --fix --ignore-path ./.eslintignore .",
+		"prettier": "prettier --ignore-path ./.prettierignore --check .",
+		"prettier:fix": "prettier --ignore-path ./.prettierignore --write .",
+		"stylelint": "stylelint **/*.{css,scss,sass,html,js,md,mjs,svelte,svg,ts}",
+		"clean-code": "npm run stylelint && npm run prettier:fix && npm run eslint:fix",
+		"publish-package": "npm publish -access public"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"peerDependencies": {
+		"svelte": ">=3.54.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.1.0",
+		"@sveltejs/kit": "^1.24.1",
+		"@sveltejs/package": "^2.2.2",
+		"@typescript-eslint/eslint-plugin": "^6.6.0",
+		"@typescript-eslint/parser": "^6.6.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-import-resolver-typescript": "^3.6.0",
+		"eslint-plugin-html": "^7.1.0",
+		"eslint-plugin-import": "^2.28.1",
+		"eslint-plugin-no-loops": "^0.3.0",
+		"eslint-plugin-only-warn": "^1.1.0",
+		"eslint-plugin-prettier": "^5.0.0",
+		"eslint-plugin-security": "^1.7.1",
+		"eslint-plugin-svelte": "^2.33.0",
+		"eslint": "^8.48.0",
+		"prettier-eslint-cli": "^7.1.0",
+		"prettier-eslint": "^15.0.1",
+		"prettier-plugin-svelte": "^3.0.3",
+		"prettier-stylelint": "^0.4.2",
+		"prettier": "^3.0.3",
+		"publint": "^0.2.2",
+		"stylelint-config-html": "^1.1.0",
+		"stylelint-config-standard": "^34.0.0",
+		"stylelint-no-unsupported-browser-features": "^7.0.0",
+		"stylelint-order": "^6.0.3",
+		"stylelint-scss": "^5.1.0",
+		"stylelint-selector-bem-pattern": "^3.0.1",
+		"stylelint": "^15.10.3",
+		"svelte-check": "^3.5.1",
+		"svelte-eslint-parser": "^0.33.0",
+		"svelte-preprocess": "^5.0.4",
+		"svelte": "^4.2.0",
+		"tslib": "^2.6.2",
+		"typescript": "^5.2.2",
+		"vite": "^4.4.9"
+	},
+	"types": "./dist/index.d.ts",
+	"import": "./dist/index.js",
+	"svelte": "./dist/index.js",
+	"type": "module"
+}

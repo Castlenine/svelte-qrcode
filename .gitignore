@@ -1,0 +1,17 @@
+.DS_Store
+.env
+.env.*
+/.svelte-kit
+/build
+/dist
+/package
+node_modules
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Ignore backup & local files
+*.backup.*
+*.local.*
+
+#! Exception
+!.env.example
