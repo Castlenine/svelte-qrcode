@@ -1,7 +1,7 @@
 {
 	"name": "@castlenine/svelte-qrcode",
 	"description": "QR Code generator component for Svelte & SvelteKit",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"author": "castlenine",
 	"license": "MIT",
 	"repository": {
