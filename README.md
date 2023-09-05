@@ -20,7 +20,7 @@ Now you can start adding QR Codes to your pages.
 <QRCode content="Test"></QRCode>
 ```
 
-![Alt text](https://github.com/Castlenine/svelte-qrcode/blob/main/readme/sample1.svg?sanitize=true)
+![Alt text](https://github.com/Castlenine/svelte-qrcode/blob/master/readme/sample1.svg?sanitize=true)
 
 ## Quick Response Codes
 
@@ -60,7 +60,7 @@ With the colour settings, you can control both the front and background colour.
 <QRCode color="#ffffff" backgroundColor="#009900" content="https://duxreserve.com"/>
 ```
 
-![Alt text](https://github.com/Castlenine/svelte-qrcode/blob/main/readme/sample2.svg?sanitize=true)
+![Alt text](https://github.com/Castlenine/svelte-qrcode/blob/master/readme/sample2.svg?sanitize=true)
 
 ### QR Code error correction
 
@@ -90,7 +90,7 @@ Sample URL for a John Doe user on the Acme app:
 <QRCode content="otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30"/>
 ```
 
-![Alt text](https://github.com/Castlenine/svelte-qrcode/blob/main/readme/sample3.svg?sanitize=true)
+![Alt text](https://github.com/Castlenine/svelte-qrcode/blob/master/readme/sample3.svg?sanitize=true)
 
 ## Acknowledgement
 
