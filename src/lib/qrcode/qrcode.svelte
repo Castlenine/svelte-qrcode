@@ -6,7 +6,7 @@
 
 	export let backgroundColor = '#ffffff';
 	export let color = '#000000';
-	export let errorCorrection = 'L';
+	export let errorCorrection = 'M';
 	export let isResponsive = false;
 	export let padding = 4;
 	export let size = 150;

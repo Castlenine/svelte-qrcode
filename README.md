@@ -67,8 +67,8 @@ With the colour settings, you can control both the front and background colour.
 QR Code has error correction capability to restore data if the code is dirty or damaged. Four error correction levels are available for users to choose according to the operating environment. Raising this level improves error correction capability but also increases the amount of data QR Code size.
 To select error correction level, various factors such as the operating environment and QR Code size need to be considered. Level Q or H may be selected for factory environment where QR Code get dirty, whereas Level L may be selected for clean environment with the large amount of data. Typically, Level M (15%) is most frequently selected.
 
-- Level L  Approx 7% (default value)
-- Level M  Approx 15%
+- Level L  Approx 7%
+- Level M  Approx 15% (default value)
 - Level Q  Approx 25%
 - Level H  Approx 30%
 
