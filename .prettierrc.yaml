@@ -1,7 +1,7 @@
 plugins:
   - 'prettier-plugin-svelte'
 
-arrowParens: avoid
+arrowParens: always
 bracketSpacing: true
 jsxSingleQuote: true
 printWidth: 160
