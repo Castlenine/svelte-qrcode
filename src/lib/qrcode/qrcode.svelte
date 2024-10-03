@@ -110,7 +110,8 @@
 	// If the logo is not defined, the QR code will be visible immediately
 	// Otherwise, it will be visible after the logo has been loaded if `waitForLogo` is set to true or if the logo is already in base64 with `logoInBase64`
 	let qrCodeIsVisible: boolean = Boolean(logoInBase64) || !waitForLogo;
-	let qrCodeGenerationError: unknown = null;
+
+	let qrCodeGenerationError: string | null = null;
 
 	const getQrCodeSvg = (regenerationWithLogo = false): string => {
 		try {
@@ -128,7 +129,8 @@
 		} catch (error) {
 			console.error('getQrCodeSvg: Failed to generate the QR code:', error);
 			// We need to store the error instead of dispatching it right away because event dispatching does not work before the component is mounted.
-			qrCodeGenerationError = error;
+			qrCodeGenerationError = (error as Error).message;
+
 			return '';
 		}
 	};

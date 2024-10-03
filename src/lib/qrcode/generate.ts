@@ -1138,8 +1138,11 @@ class QRCode {
 			}
 		}
 
-		if (this.options.data.length === 0 || this.options.data.length > 7089) {
-			throw new Error("Expected 'data' to be non-empty and with a maximum of 6.92KB!");
+		if (this.options.data.length === 0) {
+			throw new Error("Expected 'data' to be non-empty");
+		}
+		if (this.options.data.length > 7089) {
+			throw new Error("Expected 'data' with a maximum of 6.92KB");
 		}
 		if (this.options.padding < 1) this.options.padding = 1;
 		if (this.options.width < 1) this.options.width = 256;
