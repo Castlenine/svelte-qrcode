@@ -2,6 +2,7 @@
 	import { QRCode } from '$lib/index';
 
 	let downloadUrl = '';
+	let downloadUrlResponsive = '';
 	let downloadUrlJoin = '';
 
 	let downloadUrlCustomColor = '';
@@ -15,6 +16,10 @@
 
 	const handleDownloadUrlGenerated = (url = '') => {
 		downloadUrl = url;
+	};
+
+	const handleDownloadUrlResponsiveGenerated = (url = '') => {
+		downloadUrlResponsive = url;
 	};
 
 	const handleDownloadUrlGeneratedJoin = (url = '') => {
@@ -281,6 +286,21 @@
 
 {#if downloadUrl}
 	<a href={downloadUrl} download="QR-code-filename" target="_blank">Download QR Code</a>
+{/if}
+
+<h2>With download url generated with responsive</h2>
+<div>
+	<QRCode
+		data="https://duxreserve.com"
+		logoPath="/logo/lightning.svg"
+		dispatchDownloadUrl
+		isResponsive
+		on:downloadUrlGenerated={(event) => handleDownloadUrlResponsiveGenerated(event.detail.url)}
+	/>
+</div>
+
+{#if downloadUrlResponsive}
+	<a href={downloadUrlResponsive} download="QR-code-filename" target="_blank">Download QR Code</a>
 {/if}
 
 <h2>With download url generated for join</h2>
