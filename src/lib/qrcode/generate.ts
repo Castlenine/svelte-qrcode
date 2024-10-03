@@ -45,6 +45,12 @@
  *
  * - Added haveGappedModules
  *
+ * @version 2.3.0 (2024-09-27)
+ * @editor x032205
+ *
+ * - Made logos adjust size to fit modules
+ * - Made logo padding use modules as units
+ *
  */
 
 //---------------------------------------------------------------------
@@ -1343,20 +1349,34 @@ class QRCode {
 			const QR_CODE_WIDTH_SIZE = this.options.width;
 			const QR_CODE_HEIGHT_SIZE = this.options.height;
 
-			const LOGO_WIDTH = (QR_CODE_WIDTH_SIZE * (this.options.logoWidth || 15)) / 100;
-			const LOGO_HEIGHT = (QR_CODE_HEIGHT_SIZE * (this.options.logoHeight || 15)) / 100;
-			const LOGO_PADDING = this.options.logoPadding || 5;
+			// Get the size of each module
+			const MODULE_COUNT = this.qrCodeModel.getModuleCount();
+			const MODULE_SIZE = QR_CODE_WIDTH_SIZE / (MODULE_COUNT + 2 * this.options.padding);
+
+			// Get the relative logo size
+			const LOGO_REL_WIDTH = (QR_CODE_WIDTH_SIZE * (this.options.logoWidth || 0)) / 100;
+			const LOGO_REL_HEIGHT = (QR_CODE_HEIGHT_SIZE * (this.options.logoHeight || 0)) / 100;
+
+			// Adjust logo to fit modules
+			const LOGO_CEIL_W = Math.ceil(LOGO_REL_WIDTH / MODULE_SIZE);
+			const LOGO_CEIL_H = Math.ceil(LOGO_REL_HEIGHT / MODULE_SIZE);
+			const ADJUSTED_LOGO_CEIL_W = LOGO_CEIL_W + (MODULE_COUNT % 2 === LOGO_CEIL_W % 2 ? 0 : 1);
+			const ADJUSTED_LOGO_CEIL_H = LOGO_CEIL_H + (MODULE_COUNT % 2 === LOGO_CEIL_H % 2 ? 0 : 1);
+			const LOGO_WIDTH = ADJUSTED_LOGO_CEIL_W * MODULE_SIZE;
+			const LOGO_HEIGHT = ADJUSTED_LOGO_CEIL_H * MODULE_SIZE;
+
+			const LOGO_PADDING = (this.options.logoPadding || 0) * MODULE_SIZE;
 			const LOGO_BACKGROUND_COLOR = this.options.logoBackgroundColor || this.options.backgroundColor;
 
 			const LOGO_X = QR_CODE_WIDTH_SIZE / 2 - LOGO_WIDTH / 2;
-			const LOGO_Y = QR_CODE_HEIGHT_SIZE / 2 - LOGO_WIDTH / 2; // Center the logo
+			const LOGO_Y = QR_CODE_HEIGHT_SIZE / 2 - LOGO_HEIGHT / 2; // Center the logo
 			const LOGO_BACKGROUND_X = QR_CODE_WIDTH_SIZE / 2 - LOGO_WIDTH / 2 - LOGO_PADDING;
 			const LOGO_BACKGROUND_Y = QR_CODE_HEIGHT_SIZE / 2 - LOGO_HEIGHT / 2 - LOGO_PADDING;
 			const LOGO_BACKGROUND_WIDTH = LOGO_WIDTH + LOGO_PADDING * 2;
 			const LOGO_BACKGROUND_HEIGHT = LOGO_HEIGHT + LOGO_PADDING * 2;
 
 			const LOGO_BACKGROUND_RECT = `<rect x="${LOGO_BACKGROUND_X}" y="${LOGO_BACKGROUND_Y}" width="${LOGO_BACKGROUND_WIDTH}" height="${LOGO_BACKGROUND_HEIGHT}" fill="${LOGO_BACKGROUND_COLOR}" style="shape-rendering:crispEdges;"/>`;
-			const LOGO = `<image href="${this.options.logoInBase64}" x="${LOGO_X}" y="${LOGO_Y}" width="${LOGO_WIDTH}" height="${LOGO_WIDTH}" preserveAspectRatio="xMidYMid meet"/>`;
+			const LOGO = `<image href="${this.options.logoInBase64}" x="${LOGO_X}" y="${LOGO_Y}" width="${LOGO_WIDTH}" height="${LOGO_HEIGHT}" preserveAspectRatio="xMidYMid meet"/>`;
 
 			const CLOSING_TAG_POS = svg.lastIndexOf('</svg>');
 

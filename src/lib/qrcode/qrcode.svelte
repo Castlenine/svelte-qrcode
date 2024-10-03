@@ -73,7 +73,7 @@
 	export let logoInBase64 = ''; // base64-encoded logo image. If it's an empty string (`''`) or undefined, it will be ignored. Use this property instead of `logoPath` for faster logo loading times
 	export let logoPath = ''; // If it's an empty string (`''`), no logo will be added. Otherwise, the logo will be centered on the QR code. Typically, the logo file is located in the static folder
 	export let logoBackgroundColor = ''; // Color the logo background. If it's an empty string (`''`), the background color for the logo will be the same as the QR code `backgroundColor` property
-	export let logoPadding = 5; // Padding around the logo
+	export let logoPadding = 1; // Padding around the logo
 	export let logoSize = 15; // Size of the logo in percentage relative to the QR code size
 	export let logoWidth = logoSize; // Width of the logo in percentage relative to the QR code width
 	export let logoHeight = logoSize; // Height of the logo in percentage relative to the QR code height
