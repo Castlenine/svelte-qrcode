@@ -122,7 +122,7 @@ interface Options {
 	height: number; // Height dimension in pixels of the QR code
 	logoInBase64?: string; // Base64 image to be used as a logo in the center of the QR code
 	logoBackgroundColor?: string; // Background color of the logo
-	logoPadding?: number; // Padding around the logo
+	logoPadding?: number; // Padding around the logo. 1 logoPadding  = 1 module unit
 	logoWidth?: number; // Width of the logo in percentage relative to the QR code width
 	logoHeight?: number; // Height of the logo in percentage relative to the QR code height
 }

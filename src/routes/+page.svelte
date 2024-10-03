@@ -197,8 +197,13 @@
 </div>
 
 <div>
-	<!-- You can set decimal logoPadding  -->
-	<QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoBackgroundColor="#009900" logoPadding={14.125} />
+	<!-- 1 logoPadding  = 1 module -->
+	<QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoBackgroundColor="#009900" logoPadding={0} />
+</div>
+
+<div>
+	<!-- 1 logoPadding  = 1 module -->
+	<QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoBackgroundColor="#009900" logoPadding={2} />
 </div>
 
 <div>

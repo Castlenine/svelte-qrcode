@@ -225,7 +225,7 @@ If you don't set `logoBackgroundColor`, the logo will have the same background c
 | `logoInBase64`        | base64 (image) `string` | `''` (no logo)                                        |                                                                       |
 | `logoPath`            | `string`                | `''` (no logo)                                        |                                                                       |
 | `logoBackgroundColor` | `string`                | `''` (same as the QR Code `backgroundColor` property) |                                                                       |
-| `logoPadding`         | `number`                | `5` "module units"                                    |                                                                       |
+| `logoPadding`         | `number`                | `1` "module unit"                                     | 1 logoPadding  = 1 module unit                                        |
 | `logoSize`            | `number`                | `15`% of the QR code `size` property                  | Will be apply to `logoWidth` and `logoHeight` if they are not defined |
 | `logoWidth`           | `number`                | Same as `logoSize` property                           |                                                                       |
 | `logoHeight`          | `number`                | Same as `logoSize` property                           |                                                                       |
@@ -247,7 +247,7 @@ If you don't set `logoBackgroundColor`, the logo will have the same background c
 <QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoBackgroundColor="#ff0000" />
 
 <!-- logo padding -->
-<QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoPadding={10} />
+<QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoPadding={2} />
 
 <!-- logo size -->
 <QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoSize={20} />
