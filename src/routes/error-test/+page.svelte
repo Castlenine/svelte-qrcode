@@ -3,11 +3,11 @@
 
 	let errorMessage = 'No error detected. If this message is not replaced, then errors are not reported';
 
-	function onQrCodeGenerationFailed(message: string) {
+	const handleQrCodeGenerationFailed = (message: string) => {
 		errorMessage = `Got an error while attempting to generate the content: ${message}`;
-	}
+	};
 </script>
 
-<QRCode data={' '.repeat(10000)} on:qrCodeGenerationFailed={(event) => onQrCodeGenerationFailed(event.detail)} />
+<QRCode data={' '.repeat(10000)} on:qrCodeGenerationFailed={(event) => handleQrCodeGenerationFailed(event.detail)} />
 
 <p>{errorMessage}</p>
