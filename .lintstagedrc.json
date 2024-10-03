@@ -1,0 +1,7 @@
+{
+  "*.{css,scss,sass,html,js,ts,cjs,mjs,svelte,svg}": ["stylelint --config \"./.stylelintrc.yaml\" --fix"],
+  "*": [
+    "prettier --config \"./.prettierrc.yaml\" --ignore-path \"./.prettierignore\" --write",
+    "eslint --config \"./.eslintrc.cjs\" --ignore-path \"./.eslintignore\" --fix"
+  ]
+}

@@ -1,24 +1,93 @@
-.DS_Store
-.env
-.env.*
-/.svelte-kit
-/dist
+# Node modules
 node_modules
 
-# Specific file(s) to ignore
+# Outputs
+.svelte-kit
+.vite
+/dist
+
+# Test results folders (Playwright & Vitest)
+/test-results
+/test-results-vitest
+
+# Logs
+*.log
+*.logs
+*.log-*
+*.log.*
+*-debug.log
+## Ignore Vite log timestamp files
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Specific files to ignore
+.commitlintrc.ts
+.czrc
+.eslintignore
 .eslintrc.cjs
+.gitignore
+.lintstagedrc.json
+.npmrc
+.nvmrc
+.prettierignore
+*.7z
+*.css
+*.doc
+*.docx
+*.fig
+*.gif
+*.gz
+*.html
+*.ico
+*.jpeg
+*.jpg
+*.json
+*.md
+*.mdx
+*.pdf
+*.png
+*.rar
+*.sass
+*.scss
+*.svg
+*.tar
+*.tgz
+*.txt
+*.webp
+*.yaml
+*.yml
+*.zip
+/static/**/*
 package.json
 svelte.config.js
-svelte.config.ts
 tsconfig.json
-vite.config.js
 vite.config.ts
 
-# Ignore local backup
+# Documentation folder
+/docs/**/*
+/readme/**/*
+
+# Ignore backup & local files
+*.backup
 *.backup.*
+*.bak
+*.bak.*
+*.local
+*.local.*
+*.local-backup
+*.local-backup.*
 
-# Ignore files for NPM
+# OS generated files
+# MacOS
+.DS_Store
+# Windows
+Thumbs.db
+
+# Ignore lock files for PNPM, NPM and YARN
+pnpm-lock.yaml
 package-lock.json
+yarn.lock
 
-# ! Exception
-!.env.example
+# Env files
+.env
+.env.*

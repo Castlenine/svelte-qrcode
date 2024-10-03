@@ -1,16 +1,44 @@
-.DS_Store
-.env
-.env.*
-/.svelte-kit
-/dist
+# Node modules
 node_modules
 
+# Outputs
+.svelte-kit
+.vite
+/dist
+
+# Test results folders (Playwright & Vitest)
+/test-results
+/test-results-vitest
+
+# Logs
+*.log
+*.logs
+*.log-*
+*.log.*
+*-debug.log
+## Ignore Vite log timestamp files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Ignore backup & local files
+*.backup
 *.backup.*
+*.bak
+*.bak.*
+*.local
 *.local.*
+*.local-backup
+*.local-backup.*
 
+# OS generated files
+# MacOS
+.DS_Store
+# Windows
+Thumbs.db
+
+# Env files
+.env
+.env.*
 #! Exception
 !.env.example
+!.env.*.example

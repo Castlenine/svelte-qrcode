@@ -1,0 +1,151 @@
+{
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
+  "editor.semanticHighlighting.enabled": true,
+  "files.autoSave": "off",
+  "files.insertFinalNewline": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "svelte"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.stylelint": "always",
+    "source.fixAll.eslint": "always"
+  },
+  "workbench.editor.customLabels.patterns": {
+    "**/*.*": "${dirname}/${filename}.${extname}"
+  },
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.inlayHints.padding": true,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "css.validate": false,
+  "less.validate": false,
+  "sass.validate": false,
+  "scss.validate": false,
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnType": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "javascript.updateImportsOnFileMove.enabled": "prompt",
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "prettier.arrowParens": "always",
+  "prettier.breakProperty": true,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": true,
+  "prettier.bracketSpacing": false,
+  "prettier.trailingComma": "all",
+  "prettier.printWidth": 120,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "editor.insertSpaces": false,
+  "prettier.endOfLine": "lf",
+  "files.eol": "\n",
+  "editor.wordWrapColumn": 120,
+  "html.format.wrapLineLength": 120,
+  "prettier.flattenTernaries": true,
+  "svelte.enable-ts-plugin": true,
+  "svelte.plugin.svelte.format.config.singleQuote": true,
+  "editor.linkedEditing": true,
+  "svelte.plugin.svelte.defaultScriptLanguage": "ts",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "yaml.format.singleQuote": true,
+  "prettier.singleQuote": true,
+  "svelte.plugin.svelte.format.config.printWidth": 120,
+  "files.associations": {
+    "*.svelte": "svelte"
+  },
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "less", "postcss", "scss", "svelte", "html", "sass"],
+  "stylelint.snippet": ["css", "less", "postcss", "scss", "svelte", "html", "sass"],
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[sass]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[gitignore]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  }
+}

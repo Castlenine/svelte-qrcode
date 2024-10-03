@@ -67,8 +67,7 @@
 
 	<!-- Long data -->
 	<QRCode
-		data="Bitcoin. A purely P2P version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure. Messages are broadcast on a best effort basis, and nodes can leave and rejoin the network at will, accepting the longest proof-of-work chain as proof of what happened while they were gone. 1. Introduction Commerce on the Internet has come to rely almost exclusively on financial institutions serving as trusted third parties to process electronic payments. While the system works well enough for most transactions, it still suffers from the inherent weaknesses of the trust based model. Completely non-reversible transactions are not really possible, since financial institutions cannot avoid mediating disputes. The cost of mediation increases transaction costs, limiting the minimum practical transaction size and cutting off the possibility for small casual transactions, and there is a broader cost in the loss of ability to make non-reversible payments for non-reversible services. With the possibility of reversal, the need for trust spreads. Merchants must be wary of their customers, hassling them for more information than they would otherwise need. A certain percentage of fraud is accepted as unavoidable. These costs and payment uncertainties can be avoided in person by using physical currency, but no mechanism exists to make payments over a communications channel without a trusted party. What is needed is an electronic payment system based on cryptographic proof instead of trust."
-	/>
+		data="Bitcoin. A purely P2P version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure. Messages are broadcast on a best effort basis, and nodes can leave and rejoin the network at will, accepting the longest proof-of-work chain as proof of what happened while they were gone. 1. Introduction Commerce on the Internet has come to rely almost exclusively on financial institutions serving as trusted third parties to process electronic payments. While the system works well enough for most transactions, it still suffers from the inherent weaknesses of the trust based model. Completely non-reversible transactions are not really possible, since financial institutions cannot avoid mediating disputes. The cost of mediation increases transaction costs, limiting the minimum practical transaction size and cutting off the possibility for small casual transactions, and there is a broader cost in the loss of ability to make non-reversible payments for non-reversible services. With the possibility of reversal, the need for trust spreads. Merchants must be wary of their customers, hassling them for more information than they would otherwise need. A certain percentage of fraud is accepted as unavoidable. These costs and payment uncertainties can be avoided in person by using physical currency, but no mechanism exists to make payments over a communications channel without a trusted party. What is needed is an electronic payment system based on cryptographic proof instead of trust." />
 </div>
 
 <h1>Bitcoin address</h1>
@@ -77,7 +76,8 @@
 
 <div>
 	<!-- Genesis block address: -->
-	<QRCode data="bitcoin:04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f" />
+	<QRCode
+		data="bitcoin:04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f" />
 
 	<!-- 4th halving address: -->
 	<QRCode data="bitcoin:18cBEMRxXHqzWWCxZNtU91F5sbUNKhL5PX" />
@@ -134,9 +134,20 @@
 
 	<QRCode data="https://duxreserve.com" backgroundColor="yellow" modulesColor="red" anchorsInnerColor="green" />
 
-	<QRCode data="https://duxreserve.com" backgroundColor="yellow" modulesColor="red" anchorsInnerColor="green" shape="circle" />
+	<QRCode
+		data="https://duxreserve.com"
+		backgroundColor="yellow"
+		modulesColor="red"
+		anchorsInnerColor="green"
+		shape="circle" />
 
-	<QRCode data="https://duxreserve.com" backgroundColor="yellow" modulesColor="red" anchorsInnerColor="green" shape="circle" haveBackgroundRoundedEdges />
+	<QRCode
+		data="https://duxreserve.com"
+		backgroundColor="yellow"
+		modulesColor="red"
+		anchorsInnerColor="green"
+		shape="circle"
+		haveBackgroundRoundedEdges />
 </div>
 
 <h2>Shape</h2>
@@ -153,11 +164,21 @@
 	</div>
 	<div style="display: flex; gap: 32px;">
 		<div>
-			<QRCode data="https://duxreserve.com" backgroundColor="#0000FF" color="#ffffff" shape="square" haveBackgroundRoundedEdges />
+			<QRCode
+				data="https://duxreserve.com"
+				backgroundColor="#0000FF"
+				color="#ffffff"
+				shape="square"
+				haveBackgroundRoundedEdges />
 			<p>square (default) with haveBackgroundRoundedEdges</p>
 		</div>
 		<div>
-			<QRCode data="https://duxreserve.com" backgroundColor="#000000" color="#ffffff" shape="circle" haveBackgroundRoundedEdges />
+			<QRCode
+				data="https://duxreserve.com"
+				backgroundColor="#000000"
+				color="#ffffff"
+				shape="circle"
+				haveBackgroundRoundedEdges />
 			<p>circle with haveBackgroundRoundedEdges</p>
 		</div>
 	</div>
@@ -214,13 +235,29 @@
 <p>Logo width & height</p>
 <div>
 	<!-- You can set a different logoWidth and LogoHeight  -->
-	<QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoBackgroundColor="#009900" logoWidth={20} logoHeight={30} />
+	<QRCode
+		data="https://duxreserve.com"
+		logoPath="/logo/lightning.svg"
+		logoBackgroundColor="#009900"
+		logoWidth={20}
+		logoHeight={30} />
 
-	<QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoBackgroundColor="#009900" width={256} height={200} logoWidth={20} logoHeight={30} />
+	<QRCode
+		data="https://duxreserve.com"
+		logoPath="/logo/lightning.svg"
+		logoBackgroundColor="#009900"
+		width={256}
+		height={200}
+		logoWidth={20}
+		logoHeight={30} />
 </div>
 
 <div>
-	<QRCode data="https://duxreserve.com" logoPath="/logo/lightning.svg" logoBackgroundColor="transparent" logoSize={20} />
+	<QRCode
+		data="https://duxreserve.com"
+		logoPath="/logo/lightning.svg"
+		logoBackgroundColor="transparent"
+		logoSize={20} />
 </div>
 
 <div>
@@ -251,8 +288,7 @@
 	<QRCode
 		data="https://duxreserve.com"
 		logoInBase64="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Im0xOC40OTYgMTAuNzA5bC04LjYzNiA4Ljg4Yy0uMjQuMjQ2LS42MzgtLjAzOS0uNDgyLS4zNDVsMy4wNzQtNi4wNjZhLjMuMyAwIDAgMC0uMjY4LS40MzZINS43MThhLjMuMyAwIDAgMS0uMjE0LS41MWw4LjAxLTguMTE1Yy4yMzItLjIzNS42MTguMDIzLjQ4OS4zMjhMMTEuNzA2IDkuODZhLjMuMyAwIDAgMCAuMjguNDE3bDYuMjkxLS4wNzhhLjMuMyAwIDAgMSAuMjIuNTA5Ii8+PC9zdmc+"
-		logoBackgroundColor="#eeff00"
-	/>
+		logoBackgroundColor="#eeff00" />
 </div>
 
 <p>Direct base64 encoded image with wait for logo (should be ignored)</p>
@@ -261,8 +297,7 @@
 		data="https://duxreserve.com"
 		logoInBase64="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Im0xOC40OTYgMTAuNzA5bC04LjYzNiA4Ljg4Yy0uMjQuMjQ2LS42MzgtLjAzOS0uNDgyLS4zNDVsMy4wNzQtNi4wNjZhLjMuMyAwIDAgMC0uMjY4LS40MzZINS43MThhLjMuMyAwIDAgMS0uMjE0LS41MWw4LjAxLTguMTE1Yy4yMzItLjIzNS42MTguMDIzLjQ4OS4zMjhMMTEuNzA2IDkuODZhLjMuMyAwIDAgMCAuMjguNDE3bDYuMjkxLS4wNzhhLjMuMyAwIDAgMSAuMjIuNTA5Ii8+PC9zdmc+"
 		logoBackgroundColor="#eeff00"
-		waitForLogo
-	/>
+		waitForLogo />
 </div>
 
 <p>External URL</p>
@@ -270,8 +305,7 @@
 	<QRCode
 		data="https://duxreserve.com"
 		logoPath="https://upload.wikimedia.org/wikipedia/commons/a/a8/Lightning_bolt_simple.png"
-		logoBackgroundColor="#009900"
-	/>
+		logoBackgroundColor="#009900" />
 </div>
 
 <p>Incorrect path (no logo)</p>
@@ -285,8 +319,7 @@
 		data="https://duxreserve.com"
 		logoPath="/logo/lightning.svg"
 		dispatchDownloadUrl
-		on:downloadUrlGenerated={(event) => handleDownloadUrlGenerated(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlGenerated(event.detail.url)} />
 </div>
 
 {#if downloadUrl}
@@ -300,8 +333,7 @@
 		logoPath="/logo/lightning.svg"
 		dispatchDownloadUrl
 		isResponsive
-		on:downloadUrlGenerated={(event) => handleDownloadUrlResponsiveGenerated(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlResponsiveGenerated(event.detail.url)} />
 </div>
 
 {#if downloadUrlResponsive}
@@ -315,8 +347,7 @@
 		logoPath="/logo/lightning.svg"
 		isJoin
 		dispatchDownloadUrl
-		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedJoin(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedJoin(event.detail.url)} />
 </div>
 
 {#if downloadUrlJoin}
@@ -335,12 +366,12 @@
 		logoBackgroundColor="blue"
 		haveGappedModules
 		dispatchDownloadUrl
-		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedCustomColor(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedCustomColor(event.detail.url)} />
 </div>
 
 {#if downloadUrlCustomColor}
-	<a href={downloadUrlCustomColor} download="QR-code-filename-not-join" target="_blank">Download QR Code custom color</a>
+	<a href={downloadUrlCustomColor} download="QR-code-filename-not-join" target="_blank"
+		>Download QR Code custom color</a>
 {/if}
 
 <p>Direct base64 encoded image</p>
@@ -350,8 +381,7 @@
 		logoInBase64="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Im0xOC40OTYgMTAuNzA5bC04LjYzNiA4Ljg4Yy0uMjQuMjQ2LS42MzgtLjAzOS0uNDgyLS4zNDVsMy4wNzQtNi4wNjZhLjMuMyAwIDAgMC0uMjY4LS40MzZINS43MThhLjMuMyAwIDAgMS0uMjE0LS41MWw4LjAxLTguMTE1Yy4yMzItLjIzNS42MTguMDIzLjQ4OS4zMjhMMTEuNzA2IDkuODZhLjMuMyAwIDAgMCAuMjguNDE3bDYuMjkxLS4wNzhhLjMuMyAwIDAgMSAuMjIuNTA5Ii8+PC9zdmc+"
 		logoBackgroundColor="#eeff00"
 		dispatchDownloadUrl
-		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedForDirectBase64(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedForDirectBase64(event.detail.url)} />
 </div>
 
 {#if downloadUrl}
@@ -365,8 +395,7 @@
 		logoPath="/logo/lightning.svg"
 		dispatchDownloadUrl
 		downloadUrlFileFormat="png"
-		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedPng(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedPng(event.detail.url)} />
 </div>
 
 {#if downloadUrlPng}
@@ -380,8 +409,7 @@
 		logoPath="/logo/lightning.svg"
 		dispatchDownloadUrl
 		downloadUrlFileFormat="jpg"
-		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedJpg(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedJpg(event.detail.url)} />
 </div>
 
 {#if downloadUrlJpg}
@@ -395,8 +423,7 @@
 		logoPath="/logo/lightning.svg"
 		dispatchDownloadUrl
 		downloadUrlFileFormat="jpeg"
-		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedJpeg(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedJpeg(event.detail.url)} />
 </div>
 
 {#if downloadUrlJpeg}
@@ -410,8 +437,7 @@
 		logoPath="/logo/lightning.svg"
 		dispatchDownloadUrl
 		downloadUrlFileFormat="webp"
-		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedWebp(event.detail.url)}
-	/>
+		on:downloadUrlGenerated={(event) => handleDownloadUrlGeneratedWebp(event.detail.url)} />
 </div>
 
 {#if downloadUrlWebp}
@@ -420,7 +446,9 @@
 
 <h2>Time based one time passwords configuration sample</h2>
 <div>
-	<QRCode data="otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30" />
+	<QRCode
+		data="otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30" />
 </div>
 
-<a style="display: block; margin-top: 32px; margin-bottom: 32px; font-size: 32px;" href="/error-test">Error event test</a>
+<a style="display: block; margin-top: 32px; margin-bottom: 32px; font-size: 32px;" href="/error-test"
+	>Error event test</a>

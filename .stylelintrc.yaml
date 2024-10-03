@@ -3,9 +3,14 @@
 defaultSeverity: warning
 
 extends:
-  - stylelint-config-standard
   - stylelint-config-html
+  - stylelint-config-html/html
+  - stylelint-config-html/xml
   - stylelint-config-html/svelte
+  - stylelint-prettier/recommended
+  - stylelint-config-standard
+  - stylelint-config-recommended
+  - stylelint-config-recommended-scss
 
 customSyntax: postcss-html
 
@@ -15,10 +20,22 @@ overrides:
     customSyntax: postcss-scss
 
 ignoreFiles:
-  - node_modules/*
-  - svelte-kit/**
-  - static/**
-  - build/**
+  - '.svelte-kit/**/*'
+  - '*.backup.*'
+  - '*.backup'
+  - '*.bak.*'
+  - '*.bak'
+  - '*.local-backup.*'
+  - '*.local-backup'
+  - '*.local.*'
+  - '*.local'
+  - '*.yaml'
+  - '*.yml'
+  - 'dist/**/*'
+  - 'docs/**/*'
+  - 'readme/**/*'
+  - 'static/**/*'
+  - 'node_modules/**/*'
 
 plugins:
   # - stylelint-at-rule-no-children
@@ -29,9 +46,8 @@ plugins:
   # - stylelint-images
   # - stylelint-no-browser-hacks
   - stylelint-no-unsupported-browser-features
-  - stylelint-order
   - stylelint-scss
-  - stylelint-selector-bem-pattern
+  - stylelint-order
 
 rules:
   # -- Plugin
@@ -53,6 +69,9 @@ rules:
         - css-fixed
         - css-gradients
         - css-initial-value
+        - css-letter-spacing
+        - css-masks
+        - css-media-interaction
         - css-nesting
         - css-not-sel-list
         - css-overflow
@@ -127,7 +146,15 @@ rules:
   media-feature-range-notation: prefix
 
   # At-rule
-  at-rule-no-unknown: null
+  at-rule-no-unknown:
+    - true
+    - ignoreAtRules:
+        - tailwind
+        - apply
+        - variants
+        - responsive
+        - screen
+        - layer
 
   # Comment
   comment-no-empty: true
@@ -137,7 +164,6 @@ rules:
   no-duplicate-at-import-rules: true
   no-duplicate-selectors: true
   no-empty-source: true
-  no-extra-semicolons: true
   no-invalid-double-slash-comments: true # CSS-only
 
   #-- Limit language features
@@ -167,10 +193,20 @@ rules:
     - px
     - vw
     - vh
+    - dvw
+    - dvh
+    - svw
+    - svh
+    - lvw
+    - lvh
+    - vmin
+    - vmax
     - fr
     - ms
     - s
     - deg
+    - lh
+    - ch
 
   # Shorthand property
   shorthand-property-no-redundant-values: true
@@ -193,19 +229,18 @@ rules:
 
   # Selector
   selector-class-pattern:
-    - ^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$
+    - '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
     - resolveNestedSelectors: true
-      message: Class selector must follow the BEM pattern. Example .button. Element that depends upon the block .button-price. Modifier that changes the style of the block .button-alert
+      message: 'Class names must be in kebab-case or follow TailwindCSS conventions'
 
   selector-id-pattern:
     - /\s\S/
-    - message: Unexpected id selector
+    - message: 'Unexpected id selector'
 
   selector-max-attribute: null
   selector-max-class: null
   selector-max-combinators: null
   selector-max-compound-selectors: null
-  selector-max-empty-lines: 0
   selector-max-id: null
   selector-max-pseudo-class: null
   selector-max-specificity: null
@@ -222,28 +257,27 @@ rules:
   custom-media-pattern: null
 
   # At-rule
-  # at-rule-blacklist: null
-  #   - extend
-  #   - message: Unexpected @extend directive
-
   at-rule-no-vendor-prefix: true
   # at-rule-property-required-list: null
-  # at-rule-whitelist: null # via at-rule-blacklist
+  # at-rule-whitelist: null
 
   # Comment
   comment-word-disallowed-list:
     - /todo/i/idea/fixme/TODO/I/IDEA/FIXME/
     - severity: warning
-      message: Don't forget this TODO
+      message: "Don't forget this TODO"
 
   # General / Sheet
-  max-nesting-depth: 6
+  max-nesting-depth:
+    - 4
+    - ignoreAtRules:
+        - screen
+        - media
   no-unknown-animations: null # keyframes / animation in different files
 
   #-- Stylistic issues
 
   # Color
-  color-hex-case: lower
   color-hex-length: long
 
   # Font family
@@ -253,107 +287,27 @@ rules:
   font-weight-notation: null # via scale-unlimited/declaration-strict-value
 
   # Function
-  function-comma-newline-after: always-multi-line
-  function-comma-newline-before: never-multi-line
-  function-comma-space-after: always
-  function-comma-space-before: never
-  function-max-empty-lines: 0
   function-name-case: null
-  function-parentheses-newline-inside: always-multi-line
-  function-parentheses-space-inside: never
   function-url-quotes:
     - always
     - except: empty
 
-  function-whitespace-after: always
-
-  # Number
-  number-leading-zero: always
-  number-no-trailing-zeros: true
-
-  # String
-  string-quotes:
-    - single
-    - avoidEscape: true
-
   # Length
   length-zero-no-unit: true
-
-  # Unit
-  unit-case: lower
 
   # Value
   value-keyword-case: lower
 
-  # Value list
-  value-list-comma-newline-after: always-multi-line
-  value-list-comma-newline-before: never-multi-line
-  value-list-comma-space-after: always-single-line
-  value-list-comma-space-before: never
-  value-list-max-empty-lines: 0
-
   # Custom property
   custom-property-empty-line-before: never
 
-  # Property
-  property-case: lower
-
   # Declaration
-  declaration-bang-space-after: never
-  declaration-bang-space-before: always
-  declaration-colon-newline-after: null
-  declaration-colon-space-after: null
-  declaration-colon-space-before: null
   declaration-empty-line-before: null
 
-  # Declaration block
-  declaration-block-semicolon-newline-after: null
-  declaration-block-semicolon-newline-before: null
-  declaration-block-semicolon-space-after: null
-  declaration-block-semicolon-space-before: null
-  declaration-block-trailing-semicolon: always
-
-  # Block
-  block-closing-brace-empty-line-before: null
-  block-closing-brace-newline-after:
-    null
-    # - always
-    # - ignoreAtRules:
-    #     - if
-    #     - else
-
-  block-closing-brace-newline-before: null
-  block-closing-brace-space-after: null
-  block-closing-brace-space-before: null
-  block-opening-brace-newline-after: null
-  block-opening-brace-newline-before: null
-  block-opening-brace-space-after: null
-  block-opening-brace-space-before:
-    null
-    # - always
-    # - ignoreAtRules:
-    #     - if
-    #     - else
-
   # Selector
-  selector-attribute-brackets-space-inside: never
-  selector-attribute-operator-space-after: never
-  selector-attribute-operator-space-before: never
   selector-attribute-quotes: always
-  selector-combinator-space-after: always
-  selector-combinator-space-before: always
-  selector-descendant-combinator-no-non-space: true
-  selector-pseudo-class-case: lower
-  selector-pseudo-class-parentheses-space-inside: never
-  selector-pseudo-element-case: lower
   selector-pseudo-element-colon-notation: double
   selector-type-case: lower
-
-  # Selector list
-  selector-list-comma-newline-after: always-multi-line
-  selector-list-comma-newline-before: never-multi-line
-  selector-list-comma-space-after: always-single-line
-  selector-list-comma-space-before: never
 
   # Rule
   rule-empty-line-before:
@@ -365,27 +319,8 @@ rules:
     #     - first-nested
     #     - after-comment
 
-  # Media feature
-  media-feature-colon-space-after: always
-  media-feature-colon-space-before: never
-  media-feature-name-case: lower
-  media-feature-parentheses-space-inside: never
-  media-feature-range-operator-space-after: always
-  media-feature-range-operator-space-before: always
-
-  # Media query list
-  media-query-list-comma-newline-after: always-multi-line
-  media-query-list-comma-newline-before: never-multi-line
-  media-query-list-comma-space-after: always-single-line
-  media-query-list-comma-space-before: never
-
   # At-rule
   at-rule-empty-line-before: null
-  at-rule-name-case: lower
-  at-rule-name-newline-after: null
-  at-rule-name-space-after: always-single-line
-  at-rule-semicolon-newline-after: null
-  at-rule-semicolon-space-before: null
 
   # Comment
   comment-empty-line-before:
@@ -394,15 +329,6 @@ rules:
       ignore: [after-comment, stylelint-commands]
 
   comment-whitespace-inside: always
-
-  # General / Sheet
-  indentation: null
-  linebreaks: unix
-  max-empty-lines: null
-  max-line-length: null
-  no-eol-whitespace: true
-  no-missing-end-of-source-newline: null
-  no-empty-first-line: true
 
   #-- Plugins
 
@@ -447,26 +373,26 @@ rules:
   scss/at-else-if-parentheses-space-before: always
 
   # @-extend
-  scss/at-extend-no-missing-placeholder: null # via at-rule-blacklist
+  scss/at-extend-no-missing-placeholder: null
 
   # @-function
   scss/at-function-named-arguments: null
   scss/at-function-parentheses-space-before: never
   scss/at-function-pattern:
     - (^[a-z]|[A-Z0-9])[a-z]*
-    - message: Function name must be kebab-case
+    - message: 'Function name must be kebab-case'
 
   # @-if
   scss/at-if-closing-brace-newline-after: always-last-in-chain
   scss/at-if-closing-brace-space-after: null
 
   # @-import
-  scss/at-import-no-partial-leading-underscore: true
+  scss/load-no-partial-leading-underscore: true
   scss/at-import-partial-extension-blacklist: null # via scss/at-import-partial-extension-whitelist
-  scss/at-import-partial-extension-whitelist:
-    - scss
-    - sass
-    - css
+  # scss/at-import-partial-extension-whitelist: // Deprecated
+  #   - scss
+  #   - sass
+  #   - css
 
   # @-mixin
   scss/at-mixin-argumentless-call-parentheses: always
@@ -474,16 +400,19 @@ rules:
   scss/at-mixin-parentheses-space-before: never
   # scss/at-mixin-pattern:
   #   - ^([a-z][a-z0-9]*)(-[a-z0-9]+)*(-styles|-image)$
-  #   - message: Mixin name must be kebab-case and suffixed with -styles | -image
+  #   - message: 'Mixin name must be kebab-case and suffixed with -styles | -image'
 
   # @-rule
   scss/at-rule-no-unknown:
     - true
     - ignoreAtRules:
+        - tailwind
+        - apply
         - extends
         - components
         - utilities
         - screen
+        - layer
 
   # $-variable
   scss/dollar-variable-colon-newline-after: null
@@ -493,11 +422,11 @@ rules:
   scss/dollar-variable-empty-line-before: null
   scss/dollar-variable-no-missing-interpolation: true
   scss/dollar-variable-pattern:
-    - ^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$
-    - message: Variable name must follow the BEM pattern. Example $color-brand. Variety of the main/primary variable $color-brand-primary && $color-brand-secondary
+    - '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
+    - message: 'SCSS variables must be in kebab-case'
 
   # %-placeholder
-  scss/percent-placeholder-pattern: null # via at-rule-blacklist
+  scss/percent-placeholder-pattern: null
 
   # //-comment
   scss/double-slash-comment-empty-line-before: null
@@ -608,6 +537,29 @@ rules:
           - opacity
           - vertical-align
           - resize
+
+      - groupName: 'Gap'
+        properties:
+          - gap
+          - row-gap
+
+      - groupName: 'Grid'
+        properties:
+          - grid
+          - grid-area
+          - grid-auto-flow
+          - grid-auto-rows
+          - grid-auto-columns
+          - grid-template
+          - grid-template-areas
+          - grid-template-rows
+          - grid-template-columns
+          - grid-row
+          - grid-row-start
+          - grid-row-end
+          - grid-column
+          - grid-column-start
+          - grid-column-end
 
       - groupName: 'Flex'
         properties:
@@ -804,6 +756,173 @@ rules:
         properties:
           - cursor
           - user-select
+
+    # TODO: add those properties in the order rules if they are needed
+    #      - alignment-baseline
+    #      - all
+    #      - azimuth
+    #      - baseline-shift
+    #      - bookmark-label
+    #      - bookmark-level
+    #      - bookmark-state
+    #      - border-boundary
+    #      - box-decoration-break
+    #      - box-snap
+    #      - break-after
+    #      - break-before
+    #      - break-inside
+    #      - caret
+    #      - caret-color
+    #      - caret-shape
+    #      - chains
+    #      - color-interpolation-filters
+    #      - column-rule-color
+    #      - column-rule-style
+    #      - column-rule-width
+    #      - contain
+    #      - cue
+    #      - cue-after
+    #      - cue-before
+    #      - dominant-baseline
+    #      - elevation
+    #      - field-sizing
+    #      - flood-color
+    #      - flood-opacity
+    #      - flow
+    #      - flow-from
+    #      - flow-into
+    #      - footnote-display
+    #      - footnote-policy
+    #      - hanging-punctuation
+    #      - hyphens
+    #      - image-orientation
+    #      - image-resolution
+    #      - initial-letter
+    #      - initial-letter-align
+    #      - initial-letter-wrap
+    #      - isolation
+    #      - lighting-color
+    #      - line-break
+    #      - line-grid
+    #      - line-snap
+    #      - marker-side
+    #      - marquee-direction
+    #      - marquee-loop
+    #      - marquee-speed
+    #      - marquee-style
+    #      - mask
+    #      - mask-border
+    #      - mask-border-mode
+    #      - mask-border-outset
+    #      - mask-border-repeat
+    #      - mask-border-slice
+    #      - mask-border-source
+    #      - mask-border-width
+    #      - mask-clip
+    #      - mask-composite
+    #      - mask-image
+    #      - mask-mode
+    #      - mask-origin
+    #      - mask-position
+    #      - mask-repeat
+    #      - mask-size
+    #      - mask-type
+    #      - mix-blend-mode
+    #      - nav-down
+    #      - nav-left
+    #      - nav-right
+    #      - nav-up
+    #      - object-fit
+    #      - object-position
+    #      - offset
+    #      - offset-after
+    #      - offset-anchor
+    #      - offset-before
+    #      - offset-distance
+    #      - offset-end
+    #      - offset-path
+    #      - offset-position
+    #      - offset-rotate
+    #      - offset-start
+    #      - orphans
+    #      - page
+    #      - page-break-after
+    #      - page-break-before
+    #      - page-break-inside
+    #      - pause
+    #      - pause-after
+    #      - pause-before
+    #      - pitch
+    #      - pitch-range
+    #      - place-content
+    #      - place-items
+    #      - place-self
+    #      - play-during
+    #      - presentation-level
+    #      - region-fragment
+    #      - rest
+    #      - rest-after
+    #      - rest-before
+    #      - richness
+    #      - rotation
+    #      - rotation-point
+    #      - ruby-align
+    #      - ruby-merge
+    #      - ruby-position
+    #      - running
+    #      - scroll-behavior
+    #      - scroll-margin
+    #      - scroll-margin-block
+    #      - scroll-margin-block-end
+    #      - scroll-margin-block-start
+    #      - scroll-margin-bottom
+    #      - scroll-margin-inline
+    #      - scroll-margin-inline-end
+    #      - scroll-margin-inline-start
+    #      - scroll-margin-left
+    #      - scroll-margin-right
+    #      - scroll-margin-top
+    #      - scroll-padding
+    #      - scroll-padding-block
+    #      - scroll-padding-block-end
+    #      - scroll-padding-block-start
+    #      - scroll-padding-bottom
+    #      - scroll-padding-inline
+    #      - scroll-padding-inline-end
+    #      - scroll-padding-inline-start
+    #      - scroll-padding-left
+    #      - scroll-padding-right
+    #      - scroll-padding-top
+    #      - scroll-snap-align
+    #      - scroll-snap-stop
+    #      - scroll-snap-type
+    #      - shape-image-threshold
+    #      - shape-inside
+    #      - shape-margin
+    #      - shape-outside
+    #      - size
+    #      - speak
+    #      - speak-as
+    #      - speak-header
+    #      - speak-numeral
+    #      - speak-punctuation
+    #      - speech-rate
+    #      - stress
+    #      - string-set
+    #      - unicode-bidi
+    #      - voice-balance
+    #      - voice-duration
+    #      - voice-family
+    #      - voice-pitch
+    #      - voice-range
+    #      - voice-rate
+    #      - voice-stress
+    #      - voice-volume
+    #      - volume
+    #      - widows
+    #      - will-change
+    #      - wrap-flow
+    #      - wrap-through
 
     - unspecified: bottomAlphabetical
 

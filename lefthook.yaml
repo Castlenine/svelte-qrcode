@@ -1,0 +1,18 @@
+# Lefthook configuration file:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
+
+commit-msg:
+  parallel: false # Run all hooks in serial mode
+  commands:
+    commitlint:
+      run: npx --no -- commitlint --config .commitlintrc.ts --edit "$1" # Run commitlint with the custom configuration
+
+pre-commit:
+  parallel: false # Run all hooks in serial mode
+  commands:
+    lint-staged:
+      # Run lint-staged with the default configuration in serial mode and Update the index with the files that were modified by lint-staged
+      run: npx lint-staged --concurrent false && git update-index --again

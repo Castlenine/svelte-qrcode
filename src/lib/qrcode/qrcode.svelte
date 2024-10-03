@@ -306,7 +306,7 @@
 
 @dispatch qrCodeGenerated (void) The QR Code is successfully generated
 @dispatch qrCodeRegeneratedWithLogo (void) The QR Code is successfully regenerated with the logo
-@dispatch qrCodeGenerationFailed (void) The QR Code generation failed. Check the console for more information
+@dispatch qrCodeGenerationFailed (void) The QR Code generation failed. The error message can be retrieved via `event.detail`. Check the console for more information
 @dispatch downloadUrlGenerated (string) The download url for the QR Code is generated and dispatched to the parent component if the `dispatchDownloadUrl` property is set to `true`
 
 &nbsp;

@@ -2,13 +2,29 @@ plugins:
   - 'prettier-plugin-svelte'
 
 arrowParens: always
+bracketSameLine: true
 bracketSpacing: true
-endOfLine: auto
-jsxSingleQuote: true
-printWidth: 160
+embeddedLanguageFormatting: auto
+endOfLine: lf
+htmlWhitespaceSensitivity: css
+insertPragma: false
+printWidth: 120
+proseWrap: always
+quoteProps: as-needed
+requirePragma: false
 semi: true
+singleAttributePerLine: false
 singleQuote: true
 svelteSortOrder: options-scripts-markup-styles
 tabWidth: 2
 trailingComma: all
 useTabs: true
+
+# Formatting the package.json with anything other than spaces will cause issues when running install...
+overrides:
+  - files:
+      - '**/package.json'
+      - '**/*.json'
+    options:
+      tabWidth: 2
+      useTabs: false

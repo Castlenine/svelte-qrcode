@@ -2,14 +2,14 @@
 
 # `@castlenine/svelte-qrcode`
 
-[![npm.badge]][npm] [![download.badge]][download] [![repl.badge]][repl] [![generator.badge]][generator]
+[![npm.badge]][npm] [![download.badge]][download] [![repl.badge]][repl] [![contribution.badge]][contribution]
 
-QR Code generator component for Svelte & SvelteKit, with no dependencies
+QR Code generator for Svelte & SvelteKit, with no dependencies
 </div>
 
 ## Install
 
-Use your package manager to install the module:
+Use your package manager to install:
 
 ```bash
 npm install --save-dev @castlenine/svelte-qrcode
@@ -195,12 +195,12 @@ The `padding` is measured in "module units", while the `size`, `width` and `heig
 
 **Note:** It's recommended to use a square-like QR code if you prefer different `width` and `height` values. Test the QR code with different sizes to ensure it is scannable.
 
-| Property name | Type     | Default value           | Note                                                          |
-| ------------- | -------- | ----------------------- | ------------------------------------------------------------- |
-| `padding`     | `number` | `1` "module unit"       |                                                               |
-| `size`        | `number` | `256` pixels            | Will be apply to `width` and `height` if they are not defined |
-| `width`       | `number` | Same as `size` property |                                                               |
-| `height`      | `number` | Same as `size` property |                                                               |
+| Property name | Type                   | Default value           | Note                                                          |
+| ------------- | ---------------------- | ----------------------- | ------------------------------------------------------------- |
+| `padding`     | `number` (module unit) | `1` "module unit"       |                                                               |
+| `size`        | `number` (pixel)       | `256` pixels            | Will be apply to `width` and `height` if they are not defined |
+| `width`       | `number` (pixel)       | Same as `size` property |                                                               |
+| `height`      | `number` (pixel)       | Same as `size` property |                                                               |
 
 ```svelte
 <QRCode data="https://duxreserve.com" padding={5} size={1000} />
@@ -212,7 +212,7 @@ The `padding` is measured in "module units", while the `size`, `width` and `heig
 
 You can add a logo to the center of the QR code; it will be automatically scaled to fit and inserted in the generated SVG.
 
-If you don't set `logoInBase64` or `logoPath`, the logo will not be displayed. You can use either `logoPath` or `logoInBase64` to specify the logo image. Use `logoInBase64` instead of `logoPath` for faster logo loading times. If you use `logoInBase64`, the `logoPath` property will be ignored.
+If you don't set `logoInBase64` or `logoPath`, the logo will not be displayed. You can use either `logoPath` or `logoInBase64` to specify the logo image. Use `logoInBase64` instead of `logoPath` for faster logo loading times. If you use `logoInBase64`, the `logoPath` property will be ignored. There is no validation of the base64 encoding for `logoInBase64`; ensure it is valid.
 
 `logoPath` can be either a local path or a URL. Typically, the logo file is located in the static folder. If the path is incorrect or undefined, the logo will not be displayed. It uses the Fetch API to load the image; therefore, if the URL is external, it must be CORS-enabled. There may be a slight delay in loading the image when using `logoPath`. You can set `waitForLogo` to `true` to ensure the logo loads before the QR code is rendered.
 
@@ -225,10 +225,10 @@ If you don't set `logoBackgroundColor`, the logo will have the same background c
 | `logoInBase64`        | base64 (image) `string` | `''` (no logo)                                        |                                                                       |
 | `logoPath`            | `string`                | `''` (no logo)                                        |                                                                       |
 | `logoBackgroundColor` | `string`                | `''` (same as the QR Code `backgroundColor` property) |                                                                       |
-| `logoPadding`         | `number`                | `1` "module unit"                                     | 1 logoPadding  = 1 module unit                                        |
-| `logoSize`            | `number`                | `15`% of the QR code `size` property                  | Will be apply to `logoWidth` and `logoHeight` if they are not defined |
-| `logoWidth`           | `number`                | Same as `logoSize` property                           |                                                                       |
-| `logoHeight`          | `number`                | Same as `logoSize` property                           |                                                                       |
+| `logoPadding`         | `number` (module unit)  | `1` "module unit"                                     | 1 logoPadding  = 1 module unit                                        |
+| `logoSize`            | `number` (pixel)        | `15`% of the QR code `size` property                  | Will be apply to `logoWidth` and `logoHeight` if they are not defined |
+| `logoWidth`           | `number` (pixel)        | Same as `logoSize` property                           |                                                                       |
+| `logoHeight`          | `number` (pixel)        | Same as `logoSize` property                           |                                                                       |
 | `waitForLogo`         | `boolean`               | `false`                                               |                                                                       |
 
 ```svelte
@@ -330,7 +330,7 @@ Sample URL for a John Doe user on the Acme app:
 [npm.badge]: https://img.shields.io/npm/v/@castlenine/svelte-qrcode
 [download]: https://www.npmjs.com/package/@castlenine/svelte-qrcode
 [download.badge]: https://img.shields.io/npm/d18m/@castlenine/svelte-qrcode
-[repl]: https://svelte.dev/repl/854005682a57464291a52a86a9f9d321?version=4.2.15
+[repl]: https://svelte.dev/repl/3e0c8ebeb0c74d7098a1e939800456c2?version=4.2.15
 [repl.badge]: https://img.shields.io/static/v1?label=&message=Svelte+REPL&logo=svelte&logoColor=fff&color=ff3e00
-[generator]: https://qrcode-generator-tool.vercel.app/
-[generator.badge]: https://img.shields.io/badge/QR%20code%20generator-blue
+[contribution]: https://github.com/Castlenine/svelte-qrcode
+[contribution.badge]: https://img.shields.io/badge/contributions-welcome-green
