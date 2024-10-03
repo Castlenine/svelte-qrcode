@@ -197,7 +197,7 @@ The `padding` is measured in "module units", while the `size`, `width` and `heig
 
 | Property name | Type                   | Default value           | Note                                                          |
 | ------------- | ---------------------- | ----------------------- | ------------------------------------------------------------- |
-| `padding`     | `number` (module unit) | `1` "module unit"       |                                                               |
+| `padding`     | `number` (module unit) | `1` "module unit"       | 1 padding  = 1 module unit                                    |
 | `size`        | `number` (pixel)       | `256` pixels            | Will be apply to `width` and `height` if they are not defined |
 | `width`       | `number` (pixel)       | Same as `size` property |                                                               |
 | `height`      | `number` (pixel)       | Same as `size` property |                                                               |
