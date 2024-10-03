@@ -65,7 +65,7 @@
 	export let isJoin = false; // If set to true, the QR code will be generated as a single SVG element. If set to false, each square will be an individual SVG element
 	export let isResponsive = false; // If set to true, the QR code will be responsive and adapt to the available space in its parent element
 
-	export let padding = 1; // Padding around the QR code
+	export let padding = 1; // Padding around the QR code. 1 padding = 1 module unit
 	export let size = 256; // Width and height dimensions in pixels of the QR code
 	export let width = size; // Width dimension in pixels of the QR code
 	export let height = size; // Height dimension in pixels of the QR code

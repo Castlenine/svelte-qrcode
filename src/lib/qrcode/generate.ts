@@ -117,7 +117,7 @@ interface Options {
 	haveGappedModules: boolean; // If set to true, the QR code will have gapped modules
 	join: boolean; // If set to true, the QR code will be generated as a single SVG element. If set to false, each square will be an individual SVG element
 	container?: string; // Container element to render the QR code
-	padding: number; // Padding around the QR code
+	padding: number; // Padding around the QR code. 1 padding = 1 module unit
 	width: number; // Width dimension in pixels of the QR code
 	height: number; // Height dimension in pixels of the QR code
 	logoInBase64?: string; // Base64 image to be used as a logo in the center of the QR code
