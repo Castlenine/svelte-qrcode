@@ -422,3 +422,5 @@
 <div>
 	<QRCode data="otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30" />
 </div>
+
+<a style="display: block; margin-top: 32px; margin-bottom: 32px; font-size: 32px;" href="/error-test">Error event test</a>
