@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { QRCode } from '$lib/index';
+	import ErrorTest from './error-test.svelte';
 
 	let downloadUrl = '';
 	let downloadUrlResponsive = '';
@@ -422,3 +423,6 @@
 <div>
 	<QRCode data="otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30" />
 </div>
+
+<h2>Error event test</h2>
+<ErrorTest />

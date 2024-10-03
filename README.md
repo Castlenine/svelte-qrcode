@@ -305,7 +305,7 @@ You can listen for the following events:
 
 - `qrCodeGenerated`: The QR Code is successfully generated
 - `qrCodeRegeneratedWithLogo`: The QR Code is successfully regenerated with the logo
-- `qrCodeGenerationFailed`: The QR Code generation failed. Check the console for more information
+- `qrCodeGenerationFailed`: The QR Code generation failed. Check the console for more information. The underlying exception can be retrieved via `e.detail`.
 
 ```svelte
 <QRCode
